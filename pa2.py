@@ -61,6 +61,7 @@ def getfeatures(img, stepsize, follow_matlab = True):
     if img.dtype!= np.uint8 or len(img.shape) != 3:
         raise Exception('only uint8 image color are supported')
     yimg = np.require(rgb2ycbcr(img), dtype=np.float64)
+
     sy,sx, sc = img.shape
     offset = np.floor((winsize-1)/2)
     rangex = range(0, (sx-winsize+1) , stepsize)

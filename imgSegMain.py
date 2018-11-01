@@ -21,7 +21,8 @@ def loadData(path):
 def main():
 	import scipy.cluster.vq as vq
 	## load and show image
-	img = Image.open('images/361010.jpg')
+	img = Image.open('images/resized.jpg')
+
 	pl.subplot(1,3,1)
 	pl.imshow(img)
     
@@ -30,11 +31,12 @@ def main():
 	
 
 	X_T = np.transpose(X)
+	print(X_T)
 	
 	"""
 	Change the methods to one of them: KMeans(X_T, k), EM_GMM(X_T, k), MeanShift(X_T, h)
 	"""
-	ms = MeanShift(X_T, h=0.1)
+	ms = EM_GMM(X_T, k=5)
 	ms.fit()
 	Y = ms.evaluate()
 
