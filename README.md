@@ -1,5 +1,5 @@
 # Clustering Algorithms
-This repository contains some interesting clustering algorithm. All of them implemented in Python 3.5
+This repository contains some interesting clustering algorithm. All of them are implemented in Python 3.5
 
 ## Models
 1. K-Means
